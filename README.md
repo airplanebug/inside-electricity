@@ -1,6 +1,6 @@
-> Drag, pinch, scroll, slide, press, click, and peel your way through the hidden world deep within computers 🔎 ✨ 🖥️
-
 # The Inside Story of Electricity
+
+> Drag, pinch, scroll, slide, press, click, and peel your way through the hidden world deep within computers 🔎 ✨ 🖥️
 
 An interactive, offline 3D primer on what electrons and atoms are doing inside wires, diodes, capacitors, transistors, logic gates, adders, an ALU and a small CPU. Fourteen plates, one self-contained HTML file, no build step, no dependencies.
 
