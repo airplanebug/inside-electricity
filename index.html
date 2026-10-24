@@ -253,6 +253,62 @@ dl.ro dd{max-width:100%}
 :root[data-skin="cyan"][data-theme="dark"]{--paper:#071c33; --paper-2:#0b2a4a; --card:#0d2744; --ink:#e4f1f8; --ink-2:#9cc0d9; --red:#ff9a66; --gold:#f0c25a; --teal:#6fd0d6; --grain:rgba(255,255,255,.04); --stage:#04152a; --stage-fg:#e6f3fb; --shadow:#020b17; --title:#bcd8ea; --title-sh:#1f5a8c; color-scheme:dark}
 :root[data-skin="broad"][data-theme="dark"]{--paper:#1a1917; --paper-2:#24221f; --card:#211f1c; --ink:#e6e1d3; --ink-2:#a8a294; --red:#e8574a; --gold:#d9b24a; --teal:#7fb3a8; --grain:rgba(255,255,255,.035); --stage:#0f0e0d; --stage-fg:#eee9da; --shadow:#000; --title:#d6d0c0; --title-sh:#8a2a22; color-scheme:dark}
 :root[data-theme="light"]{color-scheme:light}
+/* the programmer's desk: a composing-room listing inside the Experiment card */
+.desk{margin:.5rem 0 .2rem;border-top:3px double var(--ink);padding-top:.15rem}
+.desk>summary{cursor:pointer;list-style:none;display:flex;align-items:baseline;gap:.5em;padding:.3rem 0;font:600 .74rem/1.4 var(--f-label);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+.desk>summary::-webkit-details-marker{display:none}
+.desk>summary::after{content:"+";margin-left:auto;font-size:1rem;line-height:1}
+.desk[open]>summary::after{content:"\2212"}
+.desk>summary:hover{color:var(--ink)}
+.desk .sect{font:900 1.1rem/1 var(--f-display);color:var(--red);letter-spacing:0}
+.desk .dk-n{font-weight:400;letter-spacing:0;text-transform:none;font-style:italic}
+.dk-body{padding:.1rem 0 .2rem}
+.dk-hint{margin:.1rem 0 .5rem;font-size:.82rem;font-style:italic;color:var(--ink-2)}
+.dk-title{display:flex;align-items:baseline;gap:.6rem;margin:0 0 .45rem}
+.dk-title label{font:600 .68rem/1.3 var(--f-label);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+.dk-title input{flex:1;min-width:0;border:0;border-bottom:1.5px solid var(--ink);background:transparent;color:var(--ink);font:italic 700 1rem/1.3 var(--f-display);padding:.15rem 0}
+.forme{width:100%;border-collapse:collapse;margin:.2rem 0 .1rem;font-variant-numeric:tabular-nums}
+.forme th{font:600 .62rem/1.2 var(--f-label);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);text-align:left;padding:0 .25rem .2rem;border-bottom:3px double var(--ink)}
+.forme tbody th{font:600 .8rem/1 var(--f-label);letter-spacing:.04em;text-transform:none;color:var(--ink-2);border:0;white-space:nowrap;width:2.1rem;padding:0 .25rem}
+.forme td,.forme tbody th{height:1.7rem;border-bottom:1px solid var(--ink-2)}
+.forme tbody tr:nth-child(4n) td,.forme tbody tr:nth-child(4n) th{border-bottom:1.5px solid var(--ink)}
+.forme .mn{display:inline-block;width:1.15em;color:var(--red);font-size:.95em}
+.forme td{padding:0 .25rem}
+.forme td.hx{width:2.9rem}
+.forme td.dc{width:2.2rem;text-align:right;color:var(--ink-2);font:.78rem/1 var(--f-label)}
+.forme input{display:block;width:100%;box-sizing:border-box;min-width:0;border:0;border-radius:0;background:transparent;color:var(--ink);font:.82rem/1.2 ui-monospace,"SF Mono",Menlo,Consolas,"DejaVu Sans Mono",monospace;padding:.2rem 0}
+.desk[data-lock="0"] .forme input{border-bottom:1px dotted var(--ink-2)}
+.forme input[readonly]{cursor:default}
+.forme input[aria-invalid="true"]{border-bottom:2px solid var(--red);color:var(--red)}
+.forme tr.fix input,.forme tr.fix td.dc{color:var(--red);font-style:italic}
+.forme tr.pc td,.forme tr.pc th{background:rgba(198,138,14,.16)}
+.dk-help{margin:.3rem 0 0}
+.dk-proof{margin:.5rem 0 0;font-size:.82rem;font-style:italic;color:var(--ink-2)}
+.dk-acts{display:flex;flex-wrap:wrap;gap:0 1.1rem;margin:.3rem 0 0}
+.lnk{background:none;border:0;border-radius:0;padding:.3rem 0;margin:0;font:600 .72rem/1.3 var(--f-label);letter-spacing:.09em;text-transform:uppercase;color:var(--ink);cursor:pointer;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:.22em}
+.lnk:hover{color:var(--red)}
+.lnk[hidden]{display:none}
+.dk-proof .lnk{font-size:.68rem;margin-left:.2rem}
+.dk-status{margin:.4rem 0 0;font-size:.84rem;font-style:italic;color:var(--ink);min-height:1.2em;overflow-wrap:anywhere}
+.dk-restore{margin:.1rem 0 0}
+.dk-sh{margin:.7rem 0 .1rem;padding-top:.3rem;border-top:1px solid var(--ink);font:600 .68rem/1.3 var(--f-label);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+.dk-shelf{list-style:none;margin:0;padding:0}
+.dk-shelf li.empty{font-size:.84rem;font-style:italic;color:var(--ink-2);padding:.15rem 0}
+.dk-shelf button{display:flex;align-items:baseline;width:100%;box-sizing:border-box;background:none;border:0;border-radius:0;padding:.28rem 0;text-align:left;color:var(--ink);font:.92rem/1.3 var(--f-body);cursor:pointer;box-shadow:none;margin:0}
+.dk-shelf button:hover .nm{color:var(--red)}
+.dk-shelf .nm{overflow-wrap:anywhere}
+.dk-shelf .ld{flex:1;min-width:1em;margin:0 .4em;border-bottom:2px dotted var(--ink-2);transform:translateY(-.25em)}
+.dk-shelf .dt{font:.74rem/1 var(--f-label);color:var(--ink-2);white-space:nowrap}
+.dk-shelf [aria-current="true"] .nm::before{content:"\261E\00a0";color:var(--red)}
+.guide h4{margin:1rem 0 .1rem;font:900 .95rem/1.25 var(--f-display);color:var(--ink)}
+.guide code{font:.84em ui-monospace,"SF Mono",Menlo,Consolas,"DejaVu Sans Mono",monospace;background:var(--paper-2);padding:.05em .3em;border-radius:4px;white-space:nowrap}
+.guide pre.asm{margin:.5rem 0 0;padding:.5rem .7rem;border-left:5px solid var(--gold);background:var(--paper-2);font:.82rem/1.55 ui-monospace,"SF Mono",Menlo,Consolas,"DejaVu Sans Mono",monospace;white-space:pre-wrap;overflow-wrap:anywhere;color:var(--ink)}
+.guide .exact{margin:.2rem 0 0}
+.story .guide table.isa{width:100%;border-collapse:collapse;margin:.6rem 0 .2rem;font-size:.88rem;max-width:46rem}
+.guide .isa th,.guide .isa td{padding:.22rem .4rem;text-align:left;vertical-align:top;border-bottom:1px solid var(--ink-2)}
+.guide .isa thead th{font:600 .66rem/1.2 var(--f-label);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);border-bottom:3px double var(--ink)}
+.guide .isa tbody th{font:700 .9rem/1.3 ui-monospace,Menlo,Consolas,monospace;color:var(--red);width:2.2rem}
+.guide .isa tr:nth-child(4n) th,.guide .isa tr:nth-child(4n) td{border-bottom:1.5px solid var(--ink)}
 .trycard{margin-top:.6rem;border-top:2px solid var(--ink);padding-top:.45rem}.trycard h4{margin:0 0 .2rem;font:900 .95rem/1.2 var(--f-display)}.trycard .try{margin:.2rem 0 0;border-left:5px solid var(--teal);padding-left:.6rem;font-size:.9rem}
 .setpop .chk{margin:.35rem 0}
 
@@ -398,7 +454,7 @@ body[data-kb="on"] #cv{box-shadow:0 0 0 3px var(--gold)}
     </div>
   </section>
   <aside class="panel" aria-label="Controls">
-    <section class="card" id="cardExp"><h3 id="sec-experiment" tabindex="-1">Experiment</h3><div id="ctls"></div><div id="tryBox"></div></section>
+    <section class="card" id="cardExp"><h3 id="sec-experiment" tabindex="-1">Experiment</h3><div id="ctls"></div><div id="deskBox"></div><div id="tryBox"></div></section>
     <div class="pairbar" role="group" aria-label="Arrange the Viewing glass and By the numbers cards">
       <span class="pl">Cards</span>
       <button type="button" id="pmStack" aria-pressed="true">Stacked</button>
@@ -602,6 +658,7 @@ function buildControls(){
     }
     ctlsBox.appendChild(row);
   });
+  $("deskBox").innerHTML="";if(S.desk)S.desk($("deskBox"));
 }
 function refreshPeel(){var m=S.peelMax?S.peelMax():S.layers.length-1,inp=$("gPeel");inp.max=m;if(G.peel>m){G.peel=m;}inp.value=G.peel;
   $("oPeel").textContent=G.peel+" / "+m;$("capPeel").textContent=S.peelCaption?S.peelCaption(G.peel):(G.peel===0?"All layers on. Slide right to remove outer layers one at a time.":"Removed: "+S.layers.slice(0,G.peel).join(", ")+". Left: "+S.layers.slice(G.peel).join(", ")+".");}
@@ -611,6 +668,7 @@ function updateHL(){var a=document.querySelectorAll("a.hl"),i,sec;for(i=0;i<a.le
 function buildStory(){var s=S.story,h="";
   h+='<details open id="sec-plain"><summary>In plain words'+hl("plain")+'</summary>'+s.plain.map(function(p){return "<p>"+citeHTML(p)+"</p>";}).join("")+"</details>";
   h+='<details id="sec-deep"><summary>Under the hood: the real physics'+hl("deep")+'</summary>'+s.deep.map(function(p){return "<p>"+citeHTML(p)+"</p>";}).join("")+"</details>";
+  if(s.guide)h+='<details id="sec-guide"><summary>'+s.guide.title+hl("guide")+'</summary><div class="guide">'+s.guide.html+"</div></details>";
   if(!TRYIN)h+='<details open id="sec-try"><summary>Try this'+hl("try")+'</summary><p class="try">'+citeHTML(s.tryit)+"</p></details>";
   $("story").innerHTML=h;
   $("tryBox").innerHTML=TRYIN?'<div class="trycard" id="sec-try"><h4>Try this'+hl("try")+'</h4><p class="try">'+citeHTML(s.tryit)+"</p></div>":"";}
@@ -690,7 +748,7 @@ document.addEventListener("keydown",function(e){if(!KB||e.defaultPrevented||e.ct
   if(tn==="INPUT"||tn==="SELECT"||tn==="TEXTAREA"||t.isContentEditable)return;if(t.closest&&t.closest("#setPop,dialog"))return;
   if((e.key===" "||e.key==="Enter")&&(tn==="BUTTON"||tn==="A"||tn==="SUMMARY"))return;viewKey(e);});
 function resetView(){cam.yaw=S.view?S.view[0]:0.6;cam.pitch=S.view?S.view[1]:0.32;cam.zoom=S.zoom||1;cam.vy=cam.vp=0;cam.panx=cam.pany=0;syncZoom();dirty=true;}
-function syncPlay(){$("bPause").setAttribute("aria-pressed",G.paused?"true":"false");$("bPause").textContent=G.paused?"Play":"Pause";$("bSpin").setAttribute("aria-pressed",G.auto?"true":"false");}
+function syncPlay(){deskSync(1);$("bPause").setAttribute("aria-pressed",G.paused?"true":"false");$("bPause").textContent=G.paused?"Play":"Pause";$("bSpin").setAttribute("aria-pressed",G.auto?"true":"false");}
 function togglePause(){G.paused=!G.paused;syncPlay();say(G.paused?"Paused":"Playing");dirty=true;}
 function setAuto(v){G.auto=v;syncPlay();say("Auto-turn "+(v?"on":"off"));dirty=true;}
 function setRM(on){RM=on;reduced=OSRM||on;if(on){G.auto=false;G.paused=true;}else if(!OSRM){G.auto=true;G.paused=false;}syncPlay();dirty=true;}
@@ -1877,6 +1935,9 @@ var PROGS=[
   mem:[I(1,13),I(3,14),I(2,15),I(11),I(15),0,0,0,0,0,0,0,0,25,17,0]},
  {name:"Fibonacci",note:"Shows 0, 1, 1, 2, 3, 5, 8… until the next number would not fit in 8 bits (carry flag), then halts.",
   mem:[I(1,13),I(11),I(3,14),I(9,10),I(2,15),I(1,14),I(2,13),I(1,15),I(2,14),I(7,0),I(15),0,0,0,1,0]}];
+var BENCH=4,NOTE_OWN="A program of your own. Open 'Compose a program' under the controls to see and change it byte by byte.";
+PROGS[BENCH]={name:"Your program",note:NOTE_OWN,mem:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],uid:null};
+var ED={mem:null,idx:-1,title:"",stash:null,fresh:false,open:false,delT:0},DESK=null,LIB=[],LIBOK=true;
 var CP={mem:[],pc:0,mar:0,ir:0,a:0,b:0,z:0,c:0,out:0,halted:false,t:0,n:0,src:null,dst:null,val:0,msg:"",fl:{},acc:0,lt:0,flow:0};
 /* the ALU of the CPU, evaluated bit by bit from the gate equations of Plate XIII */
 function aluGate(a,b,op,sub){var i,c=sub?1:0,r=0,z,ai,bi,bx,x1,a1,s,a2,pa,po,px,sel;
@@ -1884,7 +1945,7 @@ function aluGate(a,b,op,sub){var i,c=sub?1:0,r=0,z,ai,bi,bx,x1,a1,s,a2,pa,po,px,
   pa=GF.AND([ai,bi]);po=GF.OR([ai,bi]);px=GF.XOR([ai,bi]);
   sel=GF.OR([GF.AND([s,op===0?1:0]),GF.AND([pa,op===1?1:0]),GF.AND([po,op===2?1:0]),GF.AND([px,op===3?1:0])]);r|=sel<<i;}
  return {r:r,c:c,z:r===0?1:0};}
-function cpReset(i){var p=PROGS[i===undefined?S.P.prog:i];CP.mem=p.mem.slice();CP.pc=CP.mar=CP.ir=CP.a=CP.b=CP.z=CP.c=CP.out=0;CP.halted=false;CP.t=0;CP.n=0;CP.src=CP.dst=null;CP.msg="Reset. Press Run or take a single step.";CP.fl={};CP.acc=0;}
+function cpReset(i){if(i!==undefined||!ED.mem)edLoad(i===undefined?S.P.prog:i);CP.mem=ED.mem.slice();CP.pc=CP.mar=CP.ir=CP.a=CP.b=CP.z=CP.c=CP.out=0;CP.halted=false;CP.t=0;CP.n=0;CP.src=CP.dst=null;CP.msg="Reset. Press Run or take a single step.";CP.fl={};CP.acc=0;if(i!==undefined)renderAll();else deskSync(1);}
 function dis(v){var op=v>>4,ar=v&15,n=OPN[op];return (op===0||op===11||op===12||op===13||op===15)?n:n+" "+ar;}
 function cpMicro(){var s=CP,msg="",src=null,dst=null,val=0,done=false,t=s.t,op,arg,r,o;
  if(s.halted)return;
@@ -1913,7 +1974,7 @@ function cpMicro(){var s=CP,msg="",src=null,dst=null,val=0,done=false,t=s.t,op,a
   case 15:s.halted=true;msg="HLT: the clock stops.";done=true;break;}}
  s.lt=t;if(done){s.t=0;s.n++;}s.src=src;s.dst=dst;s.val=val;s.msg=msg;s.flow=0;}
 function cpStepInstr(){var k=0;if(CP.halted)return;do{cpMicro();k++;}while(CP.t!==0&&k<10&&!CP.halted);}
-function cpUpdate(dt){var P=S.P,k,f;if(P.run&&!CP.halted){CP.acc+=dt*pow(10,P.hz);k=0;while(CP.acc>=1&&k<60&&!CP.halted){CP.acc-=1;cpMicro();k++;}if(k>=60)CP.acc=0;}
+function cpUpdate(dt){var P=S.P,k,f;if(P.run&&!CP.halted){CP.acc+=dt*pow(10,P.hz);k=0;while(CP.acc>=1&&k<60&&!CP.halted){CP.acc-=1;cpMicro();k++;}if(k>=60)CP.acc=0;deskSync();}
  for(f in CP.fl)CP.fl[f]=Math.max(0,CP.fl[f]-dt*2.2);CP.flow=(CP.flow+dt*pow(10,Math.min(P.hz,1.2))*0.05)%1;}
 var CB={PC:{x:-3.4,z:-5.2,n:4,c:"#5f8f6a"},MAR:{x:-3.4,z:-3.0,n:4,c:"#5f8fa3"},IR:{x:-3.4,z:-0.8,n:8,c:"#8c6fa8"},CTL:{x:-3.4,z:1.5,n:0,c:"#a8836f"},
  A:{x:3.4,z:-5.2,n:8,c:"#a89a5f"},B:{x:3.4,z:-3.0,n:8,c:"#a8805f"},ALU:{x:3.4,z:-0.8,n:0,c:"#a85f5f"},OUT:{x:3.4,z:1.5,n:8,c:"#6f6fa8"}};
@@ -1949,6 +2010,206 @@ function cpDraw(t){var s=CP,i,b,nm,hide=G.peel,act=s.src&&s.dst,v=act?s.val:0,bx
   if(!CALM)lab(0,0.7,(A1[1]+B1[1])/2,s.src+" → "+s.dst+": "+s.val,"#ffd56b");}
  if(s.halted)lab(0,1.4,-1.2,"HALTED","#ff9a8a");
 }
+/* ---------------------------------------------------------------------
+   The programmer's desk: lives in the Experiment card on Plate XIV.
+   The "listing" (ED.mem) is the printed master that Reset loads.
+   Edits go to the listing and to the memory shown on the plate, and only
+   while the clock is stopped. Saved programs sit on a shelf in localStorage.
+   --------------------------------------------------------------------- */
+function hx1(v){return v.toString(16).toUpperCase();}
+function hx2(v){return ("0"+v.toString(16).toUpperCase()).slice(-2);}
+function canEdit(){return !S.P.run||G.paused||CP.halted;}
+function cleanName(n){n=(n||"").replace(/\s+/g," ").trim().slice(0,40);return n||"Untitled program";}
+function nCorr(){var p=PROGS[ED.idx],a,n=0;if(!p||!ED.mem)return 0;for(a=0;a<16;a++)if(ED.mem[a]!==p.mem[a])n++;return n;}
+function edLoad(n){ED.idx=n;ED.mem=PROGS[n].mem.slice();ED.title=PROGS[n].name;}
+function edStash(){if(!ED.mem||!nCorr())return;ED.stash={idx:ED.idx,entry:ED.idx===BENCH?{name:PROGS[BENCH].name,note:PROGS[BENCH].note,mem:PROGS[BENCH].mem.slice(),uid:PROGS[BENCH].uid}:null,mem:ED.mem.slice(),title:ED.title,name:PROGS[ED.idx].name};ED.fresh=true;}
+
+/* ---- the library ---- */
+function libRead(){try{var r=JSON.parse(localStorage.getItem("isp2.progs")||"[]");if(Array.isArray(r))LIB=r.filter(function(e){return e&&typeof e.id==="string"&&typeof e.name==="string"&&Array.isArray(e.mem)&&e.mem.length===16&&e.mem.every(function(v){return typeof v==="number"&&v===(v&255);});}).slice(0,40);}catch(e){LIB=[];}}
+function libWrite(){try{localStorage.setItem("isp2.progs",JSON.stringify(LIB));LIBOK=true;}catch(e){LIBOK=false;}return LIBOK;}
+function libFind(id){for(var i=0;i<LIB.length;i++)if(LIB[i].id===id)return LIB[i];return null;}
+function nameTaken(n,self){var l=n.toLowerCase(),i;for(i=0;i<4;i++)if(PROGS[i].name.toLowerCase()===l)return true;return LIB.some(function(e){return e.id!==self&&e.name.toLowerCase()===l;});}
+function uniqueName(n,self){var b=n,k=2;while(nameTaken(n,self)){n=b.slice(0,36)+" "+k;k++;}return n;}
+
+/* ---- assembler and file format ---- */
+function asmOne(s){var m,v,op,n,a,none;s=s.replace(/\s+/g," ").trim();if(s==="")return {v:0};
+ if((m=/^(?:\$|0x)([0-9a-f]{1,2})$/i.exec(s)))return {v:parseInt(m[1],16)};
+ if((m=/^(?:db )?(\d{1,3})$/i.exec(s))){v=+m[1];return v<256?{v:v}:{err:"A byte runs from 0 to 255."};}
+ m=/^([a-z]{2,3})(?: (\S+))?$/i.exec(s);if(!m)return {err:"Not an instruction. Try LDA 13, OUT, or a hex byte such as $1D."};
+ n=m[1].toUpperCase();op=OPN.indexOf(n);if(op<0)return {err:n+" is not an instruction. They are "+OPN.join(", ")+"."};
+ none=(op===0||op===11||op===12||op===13||op===15);
+ if(none)return m[2]!==undefined?{err:n+" takes no address."}:{v:op<<4};
+ if(m[2]===undefined)return {err:n+" needs an address from 0 to 15."};
+ a=m[2];v=/^(?:\$|0x)[0-9a-f]+$/i.test(a)?parseInt(a.replace(/^\$|^0x/i,""),16):/^\d+$/.test(a)?+a:/^[0-9a-f]+$/i.test(a)?parseInt(a,16):NaN;
+ return (v>=0&&v<=15)?{v:(op<<4)|v}:{err:"The address must be 0 to 15 (or $0 to $F)."};}
+function hexOne(s){var m=/^\s*(?:\$|0x)?([0-9a-f]{1,2})\s*$/i.exec(s);return m?{v:parseInt(m[1],16)}:{err:"Two hex digits, 00 to FF."};}
+function asmWrite(title,mem){var o=["; The Inside Story of Electricity: the 8-bit computer on Plate XIV","; Title: "+title,"; One byte per line, addresses 0 to F. A line may be an instruction (LDA 13, OUT),","; a hex byte ($1D) or plain data (DB 25). Anything after a semicolon is a comment.",""],a,v,t;
+ for(a=0;a<16;a++){v=mem[a];t=dis(v);if(asmOne(t).v!==v)t="$"+hx2(v);o.push(hx1(a)+": "+(t+"            ").slice(0,12)+" ; $"+hx2(v)+" = "+v);}
+ return o.join("\n")+"\n";}
+function asmRead(txt,fname){var lines=txt.replace(/^\uFEFF/,"").split(/\r?\n/),mem=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],next=0,title="",i,L,m,r,a,cnt=0;
+ for(i=0;i<lines.length;i++){L=lines[i];
+  if(!title&&(m=/^\s*;\s*title:\s*(.+?)\s*$/i.exec(L)))title=m[1];
+  L=L.replace(/;.*$/,"").trim();if(!L)continue;
+  a=next;if((m=/^([0-9a-f]):\s*(.*)$/i.exec(L))){a=parseInt(m[1],16);L=m[2];}
+  r=asmOne(L);if(r.err)return {err:"Line "+(i+1)+": "+r.err};
+  if(a>15)return {err:"Line "+(i+1)+": a program has room for 16 bytes."};
+  mem[a]=r.v;next=a+1;cnt++;}
+ if(!cnt)return {err:"That file has no instructions in it."};
+ return {mem:mem,title:cleanName(title||fname.replace(/\.[^.]*$/,""))};}
+
+/* ---- actions ---- */
+function deskNote(msg){var D=DESK;if(!D||!D.d.isConnected)return;if(msg&&ED.fresh&&ED.stash)msg+=" Unsaved corrections to “"+ED.stash.name+"” were set aside.";D.st.textContent=msg||"";if(msg)say(msg);
+ D.rs.hidden=!(ED.fresh&&ED.stash&&msg);if(!D.rs.hidden)D.rs.textContent="Restore “"+ED.stash.name+"”";ED.fresh=false;}
+function stopClock(){S.P.run=false;var c=document.getElementById("c_run");if(c)c.checked=false;API.markDirty();deskSync(1);}
+function benchLoad(entry,msg){edStash();PROGS[BENCH]=entry;S.P.prog=BENCH;if(ctlOut.prog)ctlOut.prog.set(BENCH);stopClock();cpReset(BENCH);renderAll();API.markDirty();deskNote(msg);}
+function openUser(id){var e=libFind(id);if(!e)return;benchLoad({name:e.name,note:NOTE_OWN,mem:e.mem.slice(),uid:e.id},"Opened “"+e.name+"”. The clock is stopped: press Run, or step through it.");}
+function newBlank(){benchLoad({name:"Untitled program",note:NOTE_OWN,mem:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],uid:null},"A blank page: sixteen empty bytes. Type an instruction on any line.");}
+function doSave(copy){var p=PROGS[S.P.prog],name=cleanName(ED.title),own=(!copy&&p.uid)?libFind(p.uid):null,e,ok;
+ if(own){e=own;e.name=uniqueName(name,e.id);e.mem=ED.mem.slice();e.t=Date.now();}
+ else{if(LIB.length>=40){deskNote("The shelf is full (40 programs). Delete one first.");return;}e={id:"p"+Date.now().toString(36)+Math.floor(Math.random()*1296).toString(36),name:uniqueName(name),mem:ED.mem.slice(),t:Date.now()};LIB.unshift(e);}
+ ok=libWrite();
+ PROGS[BENCH]={name:e.name,note:NOTE_OWN,mem:e.mem.slice(),uid:e.id};
+ if(S.P.prog!==BENCH){S.P.prog=BENCH;if(ctlOut.prog)ctlOut.prog.set(BENCH);}
+ ED.idx=BENCH;ED.title=e.name;ED.stash=null;renderAll();
+ deskNote((own?"Saved over":"Saved as")+" “"+e.name+"”."+(ok?"":" This browser would not keep it, so it lasts only until you leave the page. Download keeps it for good."));}
+function doRename(){var p=PROGS[S.P.prog],e=p.uid&&libFind(p.uid),n;if(!e)return;n=cleanName(ED.title);
+ if(n===e.name){DESK.ti.focus();DESK.ti.select();deskNote("Type the new title, then choose Rename again.");return;}
+ e.name=uniqueName(n,e.id);libWrite();p.name=e.name;ED.title=e.name;renderAll();deskNote("Renamed to “"+e.name+"”.");}
+function doDelete(){var D=DESK,p=PROGS[S.P.prog],e=p.uid&&libFind(p.uid);if(!e)return;
+ if(!ED.delT){D.bd.textContent="Really delete?";ED.delT=setTimeout(function(){ED.delT=0;if(DESK)DESK.bd.textContent="Delete";},4000);return;}
+ clearTimeout(ED.delT);ED.delT=0;D.bd.textContent="Delete";
+ LIB=LIB.filter(function(x){return x.id!==e.id;});libWrite();p.uid=null;renderAll();deskNote("Took “"+e.name+"” off the shelf. It stays open here until you load another.");}
+function doRevert(){var p=PROGS[ED.idx],a,n=0;for(a=0;a<16;a++)if(ED.mem[a]!==p.mem[a]){ED.mem[a]=p.mem[a];CP.mem[a]=p.mem[a];n++;}ED.title=p.name;renderAll();API.markDirty();deskNote("Back to the saved listing"+(n?": "+n+" byte"+(n>1?"s":"")+" restored.":"."));}
+function doRestore(){var s=ED.stash;if(!s)return;ED.stash=null;if(s.entry)PROGS[BENCH]=s.entry;S.P.prog=s.idx;if(ctlOut.prog)ctlOut.prog.set(s.idx);cpReset(s.idx);ED.mem=s.mem.slice();CP.mem=ED.mem.slice();ED.title=s.title;renderAll();API.markDirty();deskNote("Restored your unsaved corrections to “"+s.name+"”.");}
+function doDownload(){var n=cleanName(ED.title),txt=asmWrite(n,ED.mem),fn=(n.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"")||"program")+".txt";
+ function plain(){var blob=new Blob([txt],{type:"text/plain;charset=utf-8"}),u=URL.createObjectURL(blob),a=document.createElement("a");
+  a.href=u;a.download=fn;document.body.appendChild(a);a.click();document.body.removeChild(a);setTimeout(function(){URL.revokeObjectURL(u);},1500);deskNote("Downloaded “"+fn+"”.");}
+ if(window.claude&&typeof window.claude.use==="function"){window.claude.use("downloads").then(function(d){if(!d){plain();return;}
+  d.save({filename:fn,data:txt}).then(function(){deskNote("Saved “"+fn+"”.");},function(e){deskNote(e&&e.code==="declined"?"Download cancelled.":"This view could not save the file.");});},function(){plain();});}
+ else plain();}
+function doOpenFile(f){if(!f)return;if(f.size>20000){deskNote("That file is too large to be a program (limit 20 KB).");return;}
+ var rd=new FileReader();rd.onload=function(){var r=asmRead(String(rd.result),f.name);if(r.err){deskNote("Could not read “"+f.name+"”. "+r.err);return;}
+  benchLoad({name:r.title,note:NOTE_OWN,mem:r.mem,uid:null},"Opened “"+f.name+"”. Choose Save to put it on the shelf. The clock is stopped.");};
+ rd.onerror=function(){deskNote("Could not read that file.");};rd.readAsText(f);}
+
+/* ---- the listing ---- */
+function renderRow(a){var D=DESK,v=ED.mem[a],p=PROGS[ED.idx],bad=p&&p.mem[a]!==v;
+ D.ins[a].value=dis(v);D.hx[a].value=hx2(v);D.dc[a].textContent=v;D.ins[a].removeAttribute("aria-invalid");D.hx[a].removeAttribute("aria-invalid");
+ D.tr[a].className=(bad?"fix":"")+(a===D.pc?" pc":"");}
+function renderAll(){var D=DESK,a;if(!D||!D.d.isConnected)return;for(a=0;a<16;a++)renderRow(a);D.ti.value=ED.title;D.cache=null;if(ED.delT){clearTimeout(ED.delT);ED.delT=0;D.bd.textContent="Delete";}deskSync(1);}
+function deskSync(force){var D=DESK,now,ed,a,p,n,own,t,txt;if(!D||!D.d.isConnected||!S||S.id!=="cpu")return;
+ now=performance.now();if(!force&&now-D.t<180)return;D.t=now;
+ ed=canEdit();D.hint.hidden=ed;
+ if(D.ed!==ed){D.ed=ed;D.d.setAttribute("data-lock",ed?"0":"1");for(a=0;a<16;a++){D.ins[a].readOnly=D.hx[a].readOnly=!ed;}}
+ if(D.pc!==CP.pc){if(D.pc>=0){D.tr[D.pc].classList.remove("pc");D.ma[D.pc].textContent="";}D.pc=CP.pc;D.tr[D.pc].classList.add("pc");D.ma[D.pc].textContent="☞";}
+ p=PROGS[S.P.prog];n=nCorr();own=!!p.uid;t=cleanName(ED.title)!==p.name;
+ txt=n?n+" correction"+(n>1?"s":"")+" marked in red, not yet saved.":"Proof is clean.";if(own&&t)txt+=" Title changed.";
+ if(D.cache!==txt+"|"+own+"|"+LIB.length){D.cache=txt+"|"+own+"|"+LIB.length;D.pf.textContent=txt+" ";D.rv.hidden=!n;D.pf.appendChild(D.rv);
+  D.bc.hidden=D.br.hidden=D.bd.hidden=!own;D.nsum.textContent=LIB.length?" · "+LIB.length+" on the shelf":"";}
+ D.shelfSel();}
+
+function deskBuild(box){var d=el("details","desk"),D={d:d,t:0,pc:-1,ed:null,cache:null,ins:[],hx:[],dc:[],ma:[],tr:[]},tb,a,tr,th,td,i1,i2,sp;
+ libRead();if(!ED.mem||ED.idx!==S.P.prog)edLoad(S.P.prog);
+ d.open=!!ED.open;d.id="desk";
+ d.innerHTML='<summary><span class="sect" aria-hidden="true">§</span><span class="dk-t">Compose a program</span><span class="dk-n"></span></summary>'+
+  '<div class="dk-body">'+
+  '<p class="dk-hint" hidden>The clock is running, so the type is locked. <button type="button" class="lnk">Stop the clock</button> to set your own program.</p>'+
+  '<div class="dk-title"><label for="dkTitle">Title</label><input id="dkTitle" type="text" maxlength="40" autocomplete="off" spellcheck="false"></div>'+
+  '<table class="forme"><caption class="vh">Program listing, sixteen bytes. Up and down arrows move between lines; Enter sets the line.</caption><thead><tr><th scope="col"><span class="vh">Address</span><span aria-hidden="true">Loc</span></th><th scope="col">Instruction</th><th scope="col">Hex</th><th scope="col">Dec</th></tr></thead><tbody></tbody></table>'+
+  '<p class="dk-help cap">Write an instruction (LDA 13, ADD 14, OUT, HLT), a hex byte ($1D) or plain data (DB 25). The mark ☞ shows the next line to run. Changes go into the listing and into memory now; Reset starts again from the listing.</p>'+
+  '<p class="dk-proof"></p>'+
+  '<div class="dk-acts" role="group" aria-label="This program"><button type="button" class="lnk" data-a="save">Save</button><button type="button" class="lnk" data-a="copy">Save copy</button><button type="button" class="lnk" data-a="rename">Rename</button><button type="button" class="lnk" data-a="del">Delete</button></div>'+
+  '<div class="dk-acts" role="group" aria-label="Files"><button type="button" class="lnk" data-a="new">New blank</button><button type="button" class="lnk" data-a="open">Open file…</button><button type="button" class="lnk" data-a="down">Download</button><input type="file" accept=".txt,.asm,text/plain" hidden tabindex="-1" aria-hidden="true"></div>'+
+  '<p class="dk-status" aria-live="off"></p><button type="button" class="lnk dk-restore" hidden></button>'+
+  '<h4 class="dk-sh">On the shelf</h4><ul class="dk-shelf"></ul></div>';
+ D.hint=d.querySelector(".dk-hint");D.ti=d.querySelector("#dkTitle");D.pf=d.querySelector(".dk-proof");D.st=d.querySelector(".dk-status");D.rs=d.querySelector(".dk-restore");D.nsum=d.querySelector(".dk-n");D.fi=d.querySelector("input[type=file]");
+ D.bc=d.querySelector('[data-a=copy]');D.br=d.querySelector('[data-a=rename]');D.bd=d.querySelector('[data-a=del]');
+ D.rv=el("button","lnk","Revert");D.rv.type="button";D.rv.hidden=true;
+ tb=d.querySelector("tbody");
+ for(a=0;a<16;a++){tr=el("tr");th=el("th");th.scope="row";sp=el("span","mn");sp.setAttribute("aria-hidden","true");th.appendChild(sp);th.appendChild(document.createTextNode(hx1(a)));
+  tr.appendChild(th);
+  i1=el("input");i1.type="text";i1.spellcheck=false;i1.autocomplete="off";i1.setAttribute("aria-label","Instruction at address "+hx1(a));i1.setAttribute("data-r",a);i1.setAttribute("data-c","0");
+  i2=el("input");i2.type="text";i2.spellcheck=false;i2.autocomplete="off";i2.maxLength=6;i2.setAttribute("aria-label","Hex byte at address "+hx1(a));i2.setAttribute("data-r",a);i2.setAttribute("data-c","1");
+  i1.tabIndex=i2.tabIndex=a===0?0:-1;
+  td=el("td");td.appendChild(i1);tr.appendChild(td);td=el("td","hx");td.appendChild(i2);tr.appendChild(td);
+  sp=el("td","dc");tr.appendChild(sp);
+  tb.appendChild(tr);D.ins.push(i1);D.hx.push(i2);D.dc.push(sp);D.ma.push(sp.parentNode.firstChild.firstChild);D.tr.push(tr);}
+ DESK=D;box.appendChild(d);
+ D.shelfSel=function(){var ul=d.querySelector(".dk-shelf"),key=LIB.map(function(e){return e.id+e.name+e.t;}).join("|")+"|"+PROGS[S.P.prog].uid+"|"+LIBOK;if(D.sk===key)return;D.sk=key;ul.innerHTML="";
+  if(!LIB.length){var li=el("li","empty","Nothing on the shelf yet. Save the program above to keep it here.");ul.appendChild(li);}
+  LIB.forEach(function(e){var li=el("li"),b=el("button"),nm=el("span","nm"),ld=el("span","ld"),dt=el("span","dt");b.type="button";nm.textContent=e.name;ld.setAttribute("aria-hidden","true");dt.textContent=new Date(e.t).toLocaleDateString(undefined,{day:"numeric",month:"short"});
+   if(PROGS[S.P.prog].uid===e.id)b.setAttribute("aria-current","true");b.appendChild(nm);b.appendChild(ld);b.appendChild(dt);b.addEventListener("click",function(){openUser(e.id);});li.appendChild(b);ul.appendChild(li);});
+  if(!LIBOK){ul.appendChild(el("li","empty","This browser will not keep saved programs. Use Download to keep a copy."));}};
+ /* events */
+ d.addEventListener("toggle",function(){ED.open=d.open;});
+ function rowOf(inp){return +inp.getAttribute("data-r");}
+ function focusRow(a,c){a=(a+16)%16;D.ins.concat(D.hx).forEach(function(x){x.tabIndex=-1;});D.ins[a].tabIndex=D.hx[a].tabIndex=0;(c?D.hx:D.ins)[a].focus();}
+ function commit(inp){var a=rowOf(inp),w=inp.getAttribute("data-c")==="1",r;if(!canEdit()||inp.readOnly)return true;
+  r=w?hexOne(inp.value):asmOne(inp.value);
+  if(r.err){inp.setAttribute("aria-invalid","true");deskNote(r.err);return false;}
+  if(r.v!==ED.mem[a]){ED.mem[a]=r.v;CP.mem[a]=r.v;API.markDirty();deskNote("Line "+hx1(a)+" set to "+hx2(r.v)+": "+dis(r.v)+" (decimal "+r.v+").");}
+  renderRow(a);deskSync(1);return true;}
+ D.ins.concat(D.hx).forEach(function(inp){
+  inp.addEventListener("change",function(){commit(inp);});
+  inp.addEventListener("blur",function(){if(inp.getAttribute("aria-invalid"))renderRow(rowOf(inp));});
+  inp.addEventListener("focus",function(){D.ins.concat(D.hx).forEach(function(x){x.tabIndex=-1;});var a=rowOf(inp);D.ins[a].tabIndex=D.hx[a].tabIndex=0;});
+  inp.addEventListener("keydown",function(e){var a=rowOf(inp),c=+inp.getAttribute("data-c");
+   if(e.key==="ArrowDown"||e.key==="ArrowUp"){e.preventDefault();if(commit(inp))focusRow(a+(e.key==="ArrowDown"?1:-1),c);}
+   else if(e.key==="Enter"){e.preventDefault();if(commit(inp))focusRow(a+1,c);}
+   else if(e.key==="Escape"&&(inp.getAttribute("aria-invalid")||inp.value!==(c?hx2(ED.mem[a]):dis(ED.mem[a])))){e.preventDefault();e.stopPropagation();renderRow(a);deskNote("");}});});
+ D.ti.addEventListener("input",function(){ED.title=D.ti.value;deskSync(1);});
+ D.ti.addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();doSave(false);}});
+ d.querySelector(".dk-hint button").addEventListener("click",function(){stopClock();say("Clock stopped. The listing can be edited.");deskNote("The clock is stopped. Type on any line.");});
+ d.querySelector("[data-a=save]").addEventListener("click",function(){doSave(false);});
+ D.bc.addEventListener("click",function(){doSave(true);});
+ D.br.addEventListener("click",doRename);D.bd.addEventListener("click",doDelete);
+ d.querySelector("[data-a=new]").addEventListener("click",newBlank);
+ d.querySelector("[data-a=down]").addEventListener("click",doDownload);
+ d.querySelector("[data-a=open]").addEventListener("click",function(){D.fi.click();});
+ D.fi.addEventListener("change",function(){doOpenFile(D.fi.files&&D.fi.files[0]);D.fi.value="";});
+ D.rv.addEventListener("click",doRevert);D.rs.addEventListener("click",function(){doRestore();});
+ renderAll();}
+
+/* ---------------------------------------------------------------------
+   Tutorial text for Plate XIV ("Program it yourself"). Aimed at ages 13 to 25.
+   The two example programs can be loaded straight into the desk.
+   --------------------------------------------------------------------- */
+var EX=[
+ {name:"Add 5 and 6",src:"LDI 5     ; put 5 in A\nSTA 14    ; park it in box 14\nLDI 6     ; put 6 in A\nADD 14    ; A = 6 + box 14 = 11\nOUT       ; show A on the lamps\nHLT       ; stop"},
+ {name:"Countdown",src:"LDI 9     ; start at 9\nOUT       ; show it\nSUB 15    ; take away the 1 in box 15\nJZ 5      ; if that made zero, jump to the HLT\nJMP 1     ; otherwise go back to the OUT\nHLT       ; stop\nF: DB 1   ; data: the number 1, in box 15"}];
+function exBox(i){return '<pre class="asm" tabindex="0" aria-label="Example program: '+EX[i].name+'">'+EX[i].src.replace(/&/g,"&amp;").replace(/</g,"&lt;")+'</pre><p class="exact"><button type="button" class="lnk" data-ex="'+i+'">Load “'+EX[i].name+'” into the desk</button></p>';}
+var GUIDE={title:"Program it yourself: the instruction set",html:[
+ "<p>This computer understands exactly sixteen instructions. That sounds tiny, but it is enough to count, add, loop, and blink a lamp, and your phone does the same kind of thing with a few billion more of them per second. Below is the whole language, then two programs to try, then some challenges.</p>",
+ "<h4>The parts you can use</h4>",
+ "<p><b>Memory</b> is sixteen boxes numbered 0 to F. (That is hex: after 9 comes A for 10, B for 11, up to F for 15.) Each box holds one byte, a number from 0 to 255. Your instructions and your numbers live in the same boxes, so a byte is an instruction or a number depending only on how the computer happens to use it.</p>",
+ "<p><b>A</b>, the accumulator, is where the thinking happens. Nearly everything goes through it. <b>B</b> is a helper the ALU borrows during maths; you never write to it yourself. <b>PC</b>, the program counter, holds the address of the next instruction and goes up by one each time. <b>Z</b> and <b>C</b> are flags, little notes the ALU leaves behind: Z is 1 when the last result was zero, and C is 1 when an addition overflowed past 255 or when a subtraction did not need to borrow (A was at least as big as the number taken away). <b>OUT</b> is the row of lamps.</p>",
+ "<h4>How an instruction is written</h4>",
+ "<p>An instruction is one byte with two halves. The first hex digit says what to do (the opcode). The second says which box, or which number. So <code>1D</code> is opcode 1 (LDA) with address D (13): “load A from box 13.” You can type the word, <code>LDA 13</code>, or the hex, <code>$1D</code>. They are the same byte.</p>",
+ '<table class="isa"><thead><tr><th scope="col">Hex</th><th scope="col">Word</th><th scope="col">What it does</th></tr></thead><tbody>'+
+ [["0","NOP","Does nothing for one step."],["1","LDA n","Copy box n into A."],["2","STA n","Copy A into box n."],["3","ADD n","A becomes A plus box n. Sets Z and C."],["4","SUB n","A becomes A minus box n. Sets Z and C."],["5","AND n","Keep only the bits that are 1 in both A and box n."],["6","OR n","Keep the bits that are 1 in either one."],["7","JMP n","Jump: the next instruction is at address n."],["8","JZ n","Jump to n only if Z is 1 (the last result was zero)."],["9","JC n","Jump to n only if C is 1."],["A","LDI n","Put the number n itself into A. Only 0 to 15 fits."],["B","OUT","Show A on the lamps."],["C","SHL","Slide A’s bits left one place: doubles it."],["D","SHR","Slide A’s bits right one place: halves it, rounding down."],["E","XOR n","Flip the bits in A wherever box n has a 1."],["F","HLT","Halt. The clock stops."]].map(function(r){return "<tr><th scope=\"row\">"+r[0]+"</th><td><code>"+r[1]+"</code></td><td>"+r[2]+"</td></tr>";}).join("")+"</tbody></table>",
+ "<p>Only ADD, SUB, AND, OR, XOR, SHL, and SHR touch the flags. Loads, stores, jumps, and OUT leave them alone. The ones with no <code>n</code> (NOP, OUT, SHL, SHR, HLT) take no address.</p>",
+ "<h4>Three things that trip everyone up</h4>",
+ "<p><b>Code and data share the boxes.</b> If your program runs off the end of its instructions, it will happily treat your numbers as instructions. The number 25 is 19 in hex, which is <code>LDA 9</code>. The same goes for any box you forgot to stop at, so end every program with HLT or a jump.</p>",
+ "<p><b>LDI is small.</b> The number lives inside the instruction, in half a byte, so it can only be 0 to 15. For anything bigger, store it in a box as data and use LDA, ADD, or SUB.</p>",
+ "<p><b>ADD and SUB take a box, not a number.</b> To add 5, the 5 has to be sitting in memory first. That is why the first example parks its 5 in box 14 before adding.</p>",
+ "<h4>Program 1: add two numbers</h4>",
+ "<p>Read it top to bottom, like a recipe. The text after each semicolon is a comment for humans; the computer ignores it.</p>",exBox(0),
+ "<p>Run it and the lamps should settle on 11 (00001011). Try “One whole instruction” instead of Run, and watch PC step down the list and A change.</p>",
+ "<h4>Program 2: a countdown loop</h4>",
+ "<p>The magic here is going backwards. <code>JMP 1</code> sends the PC back to the OUT, so the same four instructions repeat. <code>JZ 5</code> is the way out: the loop ends only when SUB makes A exactly zero and sets the Z flag. That one idea, “repeat until something is true,” is behind every game loop you have ever played.</p>",exBox(1),
+ "<h4>Typing in your own</h4>",
+ "<p>Stop the clock, open <b>Compose a program</b> in the Experiment card, and choose <b>New blank</b>. Click the first Instruction cell, type a line, and press Enter to drop to the next one. Data goes in like any other line, such as <code>DB 1</code> on line F. Then press Reset (so the PC goes back to 0) and Run, or step through it. When you are happy, give it a title and Save, or Download it as a text file. Open file brings one back, so you can swap programs with friends.</p>",
+ "<h4>Your turn</h4>",
+ "<p><b>Warm-ups.</b> Make the countdown start at 15. Change the 1 in box F to a 3 and see which numbers show up. Then try starting at 10 with a step of 3: it still reaches zero, just the long way round. Try <code>LDI 7</code>, <code>SHL</code>, <code>SHL</code>, <code>OUT</code>, <code>HLT</code> and predict the lamps before you press Run.</p>",
+ "<p><b>Build a blinker.</b> You have XOR, a loop, and OUT. Hint: keep a 1 in a box, start A at 0, and flip A with XOR each time around. Slow the clock down so you can see it.</p>",
+ "<p><b>Count up and stop.</b> There is no “compare” instruction, so you have to build one out of SUB and a flag. Hint: count A up with ADD, and in each loop check whether A minus your target is zero.</p>",
+ "<p><b>Stretch goal.</b> STA can write into any box, including a box that holds an instruction. A program that edits its own instructions while it runs is real, and it is how early computers did things we now use arrays for.</p>",
+ "<h4>When it misbehaves</h4>",
+ "<p>Step one whole instruction at a time and compare what you expected with what the readout says. The ☞ in the listing always points at the next line to run. A program that races off into the weeds almost always forgot a HLT, loaded a number into the wrong box, or used an address above 15. Reset puts everything back the way the listing says, so you can never break anything for good.</p>"].join("")};
+document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("button[data-ex]"),x,r;if(!b||!S||S.id!=="cpu")return;x=EX[+b.getAttribute("data-ex")];r=asmRead(x.src,x.name);if(r.err)return;
+ benchLoad({name:x.name,note:NOTE_OWN,mem:r.mem,uid:null},"Loaded “"+x.name+"” into the desk. The clock is stopped: press Run, or step through it.");
+ ED.open=true;if(DESK&&DESK.d.isConnected){DESK.d.open=true;try{DESK.d.scrollIntoView({block:"nearest"});}catch(e2){}}});
+
 SCENES.push({id:"cpu",roman:"XIV",tab:"CPU",title:"A Little Computer: it runs a program, one tick at a time",radius:7.4,zoom:1,view:[0.02,0.95],
  layers:["labels","blocks","(registers and bus stay)"],
  P:{prog:0,hz:1.4,run:true},
@@ -1957,9 +2218,9 @@ SCENES.push({id:"cpu",roman:"XIV",tab:"CPU",title:"A Little Computer: it runs a 
   {t:"range",k:"hz",label:"Clock speed",min:-0.5,max:2.6,step:0.01,v:1.4,fmt:function(v){var h=pow(10,v);return (h<10?h.toFixed(1):h.toFixed(0))+" steps/s";}},
   {t:"check",k:"run",label:"Run the clock",v:true},
   {t:"btn",k:"micro",label:"One clock step"},{t:"btn",k:"instr",label:"One whole instruction"},{t:"btn",k:"reset",label:"Reset"}],
- build:function(){cpReset(S.P.prog);},draw:cpDraw,update:cpUpdate,
- change:function(k){if(k==="prog")cpReset(S.P.prog);},
- act:function(k){S.P.run=false;var c=document.getElementById("c_run");if(c)c.checked=false;if(k==="micro")cpMicro();else if(k==="instr")cpStepInstr();else cpReset(S.P.prog);},
+ build:function(){if(!ED.mem||ED.idx!==S.P.prog)cpReset(S.P.prog);else cpReset();},desk:deskBuild,draw:cpDraw,update:cpUpdate,
+ change:function(k){if(k==="prog"){edStash();cpReset(S.P.prog);deskNote(ED.fresh?"Opened “"+PROGS[S.P.prog].name+"”.":"");}deskSync(1);},
+ act:function(k){S.P.run=false;var c=document.getElementById("c_run");if(c)c.checked=false;if(k==="micro")cpMicro();else if(k==="instr")cpStepInstr();else cpReset();deskSync(1);},
  onClick:function(tag){var m=/^m(\d+)_(\d+)$/.exec(tag);if(m){CP.mem[+m[1]]^=1<<(+m[2]);}},
  readout:function(){var s=CP,h=function(v){return ("0"+v.toString(16).toUpperCase()).slice(-2);},rows=[["What just happened",s.msg,1],["PC (next instruction)",""+s.pc],["IR (current)",h(s.ir)+"  "+dis(s.ir)],["A",s.a+"  "+bits(s.a,8)],["B",s.b+"  "+bits(s.b,8)],["Flags",(s.z?"Z ":"- ")+(s.c?"C":"-")],["OUT lamps",s.out+"  "+bits(s.out,8)],["Instructions run",""+s.n+(s.halted?"  (halted)":"")],["Program",PROGS[S.P.prog].note,1]],i;
   for(i=0;i<16;i+=4)rows.push(["RAM "+i+"–"+(i+3),[0,1,2,3].map(function(j){var a=i+j;return (a===s.pc?"▸":" ")+h(s.mem[a]);}).join(" ")]);
@@ -1971,6 +2232,7 @@ SCENES.push({id:"cpu",roman:"XIV",tab:"CPU",title:"A Little Computer: it runs a 
   deep:["The design follows the 'SAP-1' teaching computer (Simple As Possible) in Malvino and Brown, extended with jumps, flags and a few extra instructions. [[31,33]] Program and data share a memory, the arrangement described in von Neumann's 1945 EDVAC report. [[33]] Instruction format: opcode in bits 7–4, operand in bits 3–0: 1 LDA, 2 STA, 3 ADD, 4 SUB, 5 AND, 6 OR, 7 JMP, 8 JZ, 9 JC, A LDI, B OUT, C SHL, D SHR, E XOR, F HLT. Everything except SHR goes through the 8-bit ALU, which this page evaluates gate by gate from the same equations as the 4-bit ALU on Plate XIII.",
    "Fetch takes two ticks (T0: MAR ← PC; T1: IR ← RAM[MAR], PC ← PC + 1). Execution takes one to three more. A real CPU does these in a fraction of a nanosecond, using a pipeline that overlaps them for different instructions, with caches and many more registers. [[31]] The control logic here is written as a program rather than drawn as gates, because that is the one place where the gate-level picture would be unreadable. A hardwired control unit is a few dozen gates and a ring counter, as in SAP-1.",
    "Simplifications: 16 bytes of memory and 4-bit addresses; no stack, interrupts or subroutines; the bus carries one transfer at a time; flags Z and C are updated only by ALU instructions (C means 'no borrow' after SUB, and logic instructions clear it); and the clock is a slider rather than a crystal."],
+  guide:GUIDE,
   tryit:"Start with Fibonacci and the default clock, then speed it up and watch OUT count 0, 1, 1, 2, 3, 5, 8… until it halts at 144 when the sum would no longer fit in 8 bits. Then try Add, pause the clock and press 'One clock step' repeatedly to see exactly what each tick does. Tap a RAM lamp in the Add program to change one of the two numbers before the addition."}
 });
 
@@ -2008,6 +2270,11 @@ if(/selftest/.test(location.search)){window.__selftest=function(){var bad=[],ok=
  o=runProg(3,5000);chk(CP.halted&&o.slice(0,10).join()==="0,1,1,2,3,5,8,13,21,34"&&o[o.length-1]===144,"cpu fib: "+o.join());
  o=runProg(1,800);chk(!CP.halted&&o.length>=20&&o[5]===5,"cpu count "+o.length);
  o=runProg(0,1200);chk(o.length>=4&&o.every(function(v,ix){return v===(ix+1)%2;}),"cpu blinky: "+o.join());
+ // program file round trip: every byte value survives write then read
+ (function(){var bad=0,v,q,m,r;for(q=0;q<16;q++){m=[];for(v=0;v<16;v++)m.push(q*16+v);r=asmRead(asmWrite("T",m),"t.txt");if(r.err||r.mem.join()!==m.join())bad++;}
+  for(q=0;q<4;q++){r=asmRead(asmWrite("T",PROGS[q].mem),"t.txt");if(r.err||r.mem.join()!==PROGS[q].mem.join())bad++;}
+  chk(bad===0,"program file round trip: "+bad+" bad");
+  chk(asmOne("lda 13").v===0x1D&&asmOne("JZ 5").v===0x85&&asmOne("jc 15").v===0x9F&&asmOne("STA E").v===0x2E&&asmOne("db 25").v===25&&asmOne("$ff").v===255&&!!asmOne("OUT 3").err&&!!asmOne("LDA 16").err&&!!asmOne("LDA").err&&!!asmOne("DB 300").err&&!!asmOne("ZZZ 1").err,"assembler accepts and rejects the right things");})();
  // CPU extra instruction checks
  S={P:{prog:0}};cpReset(0);CP.mem=[I(10,5),I(12),I(13),I(10,3),I(4,13),I(15),0,0,0,0,0,0,0,3,0,0];for(i=0;i<60&&!CP.halted;i++)cpMicro();chk(CP.halted&&CP.a===0&&CP.z===1&&CP.c===1,"cpu sub/flags a="+CP.a+" z="+CP.z+" c="+CP.c);
  S=keep;

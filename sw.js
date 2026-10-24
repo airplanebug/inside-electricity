@@ -1,7 +1,7 @@
 /* Offline support for The Inside Story of Electricity.
    Pages: network first, falling back to the saved copy. Other files: saved copy first, refreshed in the background.
    Bump CACHE when you want every visitor to drop old copies at once. */
-const CACHE = "inside-electricity-v1";
+const CACHE = "inside-electricity-v3";
 const CORE = ["./", "index.html", "site.webmanifest", "favicon.svg", "favicon.ico", "icon-192.png", "icon-512.png", "icon-maskable-192.png", "icon-maskable-512.png", "apple-touch-icon.png"];
 
 self.addEventListener("install", (e) => {
