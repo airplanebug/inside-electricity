@@ -6,7 +6,7 @@ An interactive, offline 3D primer on what electrons and atoms are doing inside w
 
 Made by [AirplaneBug](https://airplanebug.io) using Anthropic's [Claude](https://claude.ai).
 
-[Editor's note: Made by Claude using AirplaneBug?]
+(Editor's note: Made by Claude using AirplaneBug?)
 
 ## Run it
 
@@ -21,7 +21,7 @@ Open `index.html` in any modern browser. To host it, upload `index.html` to any 
 
 ## A note on the facts
 
-Facts and sources [Editor's note: and code] have been assembled by Claude and are not yet human-verified. Use them at your own discretion, and please open an issue or pull request if you find a mistake.
+Facts and sources (Editor's note: and code) have been assembled by Claude and are not yet human-verified. Use them at your own discretion, and please open an issue or pull request if you find a mistake.
 
 ## License
 
