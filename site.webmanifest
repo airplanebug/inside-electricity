@@ -1,14 +1,27 @@
 {
   "name": "The Inside Story of Electricity",
   "short_name": "Inside Electricity",
-  "description": "An interactive, offline 3D primer on what electrons and atoms do inside wires, components, logic gates and a tiny CPU.",
+  "description": "An interactive 3D primer on what electrons and atoms do inside wires, components, logic gates and a tiny CPU. Works offline.",
+  "lang": "en",
+  "dir": "ltr",
   "start_url": ".",
-  "display": "browser",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "any",
   "background_color": "#1b2644",
   "theme_color": "#1b2644",
+  "categories": ["education", "science"],
   "icons": [
-    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" },
-    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ],
+  "screenshots": [
+    { "src": "screenshots/wide-atom.jpg", "sizes": "1280x720", "type": "image/jpeg", "form_factor": "wide", "label": "Plate I: the atom, drawn as planets and as a probability fog" },
+    { "src": "screenshots/wide-cpu.jpg", "sizes": "1280x720", "type": "image/jpeg", "form_factor": "wide", "label": "Plate XIV: a tiny working CPU" },
+    { "src": "screenshots/narrow-atom.jpg", "sizes": "780x1688", "type": "image/jpeg", "form_factor": "narrow", "label": "The atom plate on a phone" },
+    { "src": "screenshots/narrow-blinky.jpg", "sizes": "780x1688", "type": "image/jpeg", "form_factor": "narrow", "label": "Plate IX: a complete blinking-LED circuit" }
   ]
 }
